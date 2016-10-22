@@ -1,10 +1,12 @@
-package com.example.ashi.safecityandroid;
+package com.example.ashi.safecityandroid.Activities;
 
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
-public class MapMain extends AppCompatActivity {
+import com.example.ashi.safecityandroid.R;
+
+public class MapActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
