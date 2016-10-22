@@ -28,7 +28,7 @@ public class HomeActivity extends AppCompatActivity {
         View.OnClickListener toReportListener = new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(HomeActivity.this, MapActivity.class);
+                Intent intent = new Intent(HomeActivity.this, ReportWelcome.class);
                 startActivity(intent);
             }
         };
@@ -38,7 +38,7 @@ public class HomeActivity extends AppCompatActivity {
         View.OnClickListener toMapListener = new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(HomeActivity.this, ReportWelcome.class);
+                Intent intent = new Intent(HomeActivity.this, MapActivity.class);
                 startActivity(intent);
             }
         };

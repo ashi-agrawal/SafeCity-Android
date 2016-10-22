@@ -32,7 +32,8 @@
         android:layout_height="75dp"
         android:layout_below="@+id/textView"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:textSize="24sp" />
 
     <Button
         android:text="Map"
@@ -42,8 +43,8 @@
         android:backgroundTint="@android:color/holo_purple"
         android:textColor="@android:color/white"
         android:textStyle="normal|bold"
-        android:layout_marginTop="10dp"
         android:layout_below="@+id/report"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:textSize="24sp" />
 </RelativeLayout>
