@@ -18,9 +18,9 @@ public class Report1 extends AppCompatActivity {
         actionBar.hide();
         setContentView(R.layout.activity_report1);
 
-        mToStep2 = (Button) findViewById(R.id.startReport);
+        mToStep2 = (Button) findViewById(R.id.toStep2);
 
-        View.OnClickListener toStep1Listener = new View.OnClickListener() {
+        View.OnClickListener toStep2Listener = new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(Report1.this, Report2.class);
@@ -28,6 +28,6 @@ public class Report1 extends AppCompatActivity {
             }
         };
 
-        mToStep2.setOnClickListener(toStep1Listener);
+        mToStep2.setOnClickListener(toStep2Listener);
     }
 }

@@ -218,7 +218,8 @@
             android:id="@+id/toStep3"
             android:backgroundTint="@android:color/holo_purple"
             android:textColor="@android:color/white"
-            android:textStyle="normal|bold" />
+            android:textStyle="normal|bold"
+            android:textSize="24sp" />
 
     </LinearLayout>
 </RelativeLayout>

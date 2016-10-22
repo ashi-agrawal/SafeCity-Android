@@ -30,7 +30,8 @@
         android:backgroundTint="@android:color/holo_purple"
         android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:textSize="24sp" />
 
     <TextView
         android:text="Thank you for taking the time to share your story! Follow our easy 3-step process to report your experience."
