@@ -8,7 +8,6 @@ import android.view.View;
 import android.widget.Button;
 
 import com.example.ashi.safecityandroid.R;
-import com.example.ashi.safecityandroid.ReportWelcome;
 
 public class HomeActivity extends AppCompatActivity {
 
@@ -28,7 +27,7 @@ public class HomeActivity extends AppCompatActivity {
         View.OnClickListener toReportListener = new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(HomeActivity.this, ReportWelcome.class);
+                Intent intent = new Intent(HomeActivity.this, ReportActivity.class);
                 startActivity(intent);
             }
         };
