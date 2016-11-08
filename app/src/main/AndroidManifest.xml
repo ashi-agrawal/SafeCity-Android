@@ -15,10 +15,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ReportWelcome" />
-        <activity android:name=".Report1" />
-        <activity android:name=".Report2" />
-        <activity android:name=".Report3" />
         <activity android:name=".Activities.MapActivity"></activity>
     </application>
 
