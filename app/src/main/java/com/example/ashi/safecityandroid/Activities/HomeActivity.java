@@ -9,10 +9,13 @@ import android.widget.Button;
 
 import com.example.ashi.safecityandroid.R;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
+
 public class HomeActivity extends AppCompatActivity {
 
-    private Button mReport;
-    private Button mMap;
+    @BindView(R.id.report) Button mReport;
+    @BindView(R.id.map) Button mMap;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,9 +23,7 @@ public class HomeActivity extends AppCompatActivity {
         ActionBar actionBar = getSupportActionBar();
         actionBar.hide();
         setContentView(R.layout.activity_home);
-
-        mReport = (Button) findViewById(R.id.report);
-        mMap = (Button) findViewById(R.id.map);
+        ButterKnife.bind(this);
 
         View.OnClickListener toReportListener = new View.OnClickListener() {
             @Override

@@ -15,6 +15,9 @@ import com.example.ashi.safecityandroid.StepOneFragment;
 import com.example.ashi.safecityandroid.StepThreeFragment;
 import com.example.ashi.safecityandroid.StepTwoFragment;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
+
 /**
  * Created by ashi on 10/21/16.
  */
@@ -22,6 +25,7 @@ import com.example.ashi.safecityandroid.StepTwoFragment;
 public class ReportActivity extends AppCompatActivity{
     Report currentReport = new Report();
     StepsPagerAdapter adapterViewPager;
+    @BindView(R.id.viewpager) ViewPager vpPager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,8 +33,8 @@ public class ReportActivity extends AppCompatActivity{
         ActionBar actionBar = getSupportActionBar();
         actionBar.hide();
         setContentView(R.layout.activity_report);
+        ButterKnife.bind(this);
         adapterViewPager = new StepsPagerAdapter(getSupportFragmentManager());
-        ViewPager vpPager = (ViewPager) findViewById(R.id.viewpager);
         vpPager.setAdapter(adapterViewPager);
         PagerSlidingTabStrip tabStrip = (PagerSlidingTabStrip) findViewById(R.id.tabs);
         tabStrip.setViewPager(vpPager);
