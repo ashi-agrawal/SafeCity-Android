@@ -3,6 +3,7 @@ package com.example.ashi.safecityandroid.Models;
 import android.os.Parcel;
 import android.os.Parcelable;
 
+import java.util.ArrayList;
 import java.util.Calendar;
 
 /**
@@ -10,70 +11,56 @@ import java.util.Calendar;
  */
 
 public class Report implements Parcelable {
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
 
     public String getDescription() {
-        return description;
+        return incident_description;
     }
 
-    public void setDescription(String description) {
-        this.description = description;
+    public void setDescription(String incident_description) {
+        this.incident_description = incident_description;
     }
 
-    public int getNumber() {
-        return number;
+    /*
+    public String getDate(String incident_date) {
+        return incident_date;
     }
-
-    public void setNumber(int number) {
-        this.number = number;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
+    */
 
     public String getTitle() {
-        return title;
+        return incident_title;
     }
 
-    public void setTitle(String title) {
-        this.title = title;
+    public void setTitle(String incident_title) {
+        this.incident_title = incident_title;
     }
 
-    private String title;
-    private String name;
+    public int[] getCategories() {
+        return incident_category;
+    }
+
+    public void setCategories(int[] incident_category) {
+        this.incident_category = incident_category;
+    }
+
+    private String incident_title;
     //private ___ location (use Google Maps API to find correct formatting)
     //private Calendar date; this is hard to do because calendar sux but we will figure it out
-    private String description;
-    private int number;
-    private String email;
+    private String incident_description;
+    private int[] incident_category;
     //could use boolean to store each of categories or think of something else
+    //private ArrayList<Integer> categories;
 
     @Override
     public void writeToParcel(Parcel out, int flags) {
-        out.writeString(title);
-        out.writeString(name);
-        out.writeString(description);
-        out.writeInt(number);
-        out.writeString(email);
+        out.writeString(incident_title);
+        out.writeString(incident_description);
+        out.writeIntArray(incident_category);
     }
 
     private Report(Parcel in) {
-        title = in.readString();
-        name = in.readString();
-        description = in.readString();
-        number = in.readInt();
-        email = in.readString();
+        incident_title = in.readString();
+        incident_description = in.readString();
+        //create array
     }
 
     public Report() {}
