@@ -8,7 +8,7 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.example.ashi.safecityandroid.Report3">
+    tools:context="com.example.ashi.safecityandroid.StepThreeFragment">
 
     <TextView
         android:text="Confirm Details"
@@ -23,18 +23,6 @@
         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
         android:textSize="34sp" />
 
-    <Button
-        android:text="SUBMIT"
-        android:layout_width="match_parent"
-        android:layout_height="75dp"
-        android:id="@+id/button2"
-        tools:textStyle="bold"
-        tools:textColorLink="@android:color/white"
-        tools:backgroundTint="@android:color/holo_purple"
-        tools:textColor="@android:color/white"
-        android:textSize="24sp"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:backgroundTint="@android:color/holo_purple" />
+    <!--TODO: include a TextView that has the details so they can scroll through and make sure it's alright - or split something up so that we can have three steps-->
+
 </RelativeLayout>

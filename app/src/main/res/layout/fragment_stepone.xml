@@ -8,7 +8,7 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.example.ashi.safecityandroid.Report1">
+    tools:context="com.example.ashi.safecityandroid.StepOneFragment">
 
     <TextView
         android:layout_width="wrap_content"
@@ -24,23 +24,9 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true" />
 
-    <Button
-        android:text="NEXT"
-        android:layout_width="match_parent"
-        android:layout_height="75dp"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="21dp"
-        android:id="@+id/toStep2"
-        android:backgroundTint="@android:color/holo_purple"
-        tools:textColor="@android:color/white"
-        tools:textStyle="bold"
-        android:textSize="24sp"
-        android:textColor="@android:color/white" />
-
     <TextView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="75dp"
         android:gravity="center"
         android:isScrollContainer="true"
         android:minHeight="120dp"
@@ -49,7 +35,8 @@
         android:id="@+id/editText3"
         android:textAppearance="@style/TextAppearance.AppCompat.Body1"
         android:textSize="18sp"
-        android:layout_above="@+id/toStep2"
+        android:layout_marginBottom="21dp"
+        android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_alignParentRight="true"
