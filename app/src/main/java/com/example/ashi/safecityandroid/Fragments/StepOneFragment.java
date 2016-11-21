@@ -15,6 +15,7 @@ import com.example.ashi.safecityandroid.R;
  */
 
 public class StepOneFragment extends Fragment {
+    Report current;
 
     public static StepOneFragment newInstance (Report currentReport){
         StepOneFragment frag = new StepOneFragment();
@@ -29,7 +30,7 @@ public class StepOneFragment extends Fragment {
     public void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
-        Report current = getArguments().getParcelable("report");
+        current = getArguments().getParcelable("report");
     }
 
     @Nullable
@@ -37,5 +38,10 @@ public class StepOneFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup parent, @Nullable Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.fragment_stepone, parent, false);
         return v;
+    }
+
+    @Override
+    public void onDestroyView() {
+        super.onDestroyView();
     }
 }

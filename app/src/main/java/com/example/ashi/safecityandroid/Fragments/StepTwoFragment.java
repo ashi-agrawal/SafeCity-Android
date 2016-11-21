@@ -6,15 +6,24 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
 
 import com.example.ashi.safecityandroid.Models.Report;
 import com.example.ashi.safecityandroid.R;
+
+import butterknife.BindView;
+import butterknife.ButterKnife;
+import butterknife.Unbinder;
 
 /**
  * Created by ashi on 11/7/16.
  */
 
 public class StepTwoFragment extends Fragment {
+    @BindView(R.id.etTitle) EditText etTitle;
+    @BindView(R.id.etDescription) EditText etDescription;
+    Report current;
+    private Unbinder unbinder;
 
     public static StepTwoFragment newInstance (Report currentReport){
         StepTwoFragment frag = new StepTwoFragment();
@@ -29,14 +38,22 @@ public class StepTwoFragment extends Fragment {
     public void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
-        Report current = getArguments().getParcelable("report");
+        current = getArguments().getParcelable("report");
     }
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup parent, @Nullable Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.fragment_steptwo, parent, false);
+        unbinder = ButterKnife.bind(this, v);
         return v;
     }
 
+    @Override
+    public void onDestroyView() {
+        //current.setTitle(etTitle.getText().toString());
+        //current.setDescription(etTitle.getText().toString());
+        super.onDestroyView();
+        unbinder.unbind();
+    }
 }

@@ -16,7 +16,7 @@
         android:layout_height="wrap_content"
         android:gravity="center"
         android:layout_marginTop="17dp"
-        android:id="@+id/textView4"
+        android:id="@+id/tvStep2"
         tools:textColor="@android:color/black"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"

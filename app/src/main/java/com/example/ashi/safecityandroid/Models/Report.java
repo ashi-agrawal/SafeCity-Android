@@ -11,6 +11,26 @@ import java.util.Calendar;
  */
 
 public class Report implements Parcelable {
+    private String incident_title = "";
+    //private ___ location (use Google Maps API to find correct formatting)
+    //private Calendar date; this is hard to do because calendar sux but we will figure it out
+    private String incident_description = "";
+    private int[] incident_category;
+    private boolean isComplete;
+    //private ArrayList<Integer> categories;
+
+    @Override
+    public void writeToParcel(Parcel out, int flags) {
+        out.writeString(incident_title);
+        out.writeString(incident_description);
+        out.writeIntArray(incident_category);
+    }
+
+    private Report(Parcel in) {
+        incident_title = in.readString();
+        incident_description = in.readString();
+        //create array
+    }
 
     public String getDescription() {
         return incident_description;
@@ -19,12 +39,6 @@ public class Report implements Parcelable {
     public void setDescription(String incident_description) {
         this.incident_description = incident_description;
     }
-
-    /*
-    public String getDate(String incident_date) {
-        return incident_date;
-    }
-    */
 
     public String getTitle() {
         return incident_title;
@@ -42,28 +56,13 @@ public class Report implements Parcelable {
         this.incident_category = incident_category;
     }
 
-    private String incident_title;
-    //private ___ location (use Google Maps API to find correct formatting)
-    //private Calendar date; this is hard to do because calendar sux but we will figure it out
-    private String incident_description;
-    private int[] incident_category;
-    //could use boolean to store each of categories or think of something else
-    //private ArrayList<Integer> categories;
-
-    @Override
-    public void writeToParcel(Parcel out, int flags) {
-        out.writeString(incident_title);
-        out.writeString(incident_description);
-        out.writeIntArray(incident_category);
+    public boolean checkIfComplete() {
+        if (isComplete) return isComplete;
+        else {
+            if (getTitle() != "" && getDescription () != "") isComplete = true;
+            return isComplete;
+        }
     }
-
-    private Report(Parcel in) {
-        incident_title = in.readString();
-        incident_description = in.readString();
-        //create array
-    }
-
-    public Report() {}
 
     @Override
     public int describeContents() {
