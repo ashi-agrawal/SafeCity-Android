@@ -50,10 +50,14 @@ public class StepTwoFragment extends Fragment {
     }
 
     @Override
-    public void onDestroyView() {
+    public void onPause() {
+        super.onPause();
         current.setTitle(etTitle.getText().toString());
         current.setDescription(etTitle.getText().toString());
-        System.out.println(current.getTitle());
+    }
+
+    @Override
+    public void onDestroyView() {
         super.onDestroyView();
         unbinder.unbind();
     }
