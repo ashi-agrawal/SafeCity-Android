@@ -51,8 +51,9 @@ public class StepTwoFragment extends Fragment {
 
     @Override
     public void onDestroyView() {
-        //current.setTitle(etTitle.getText().toString());
-        //current.setDescription(etTitle.getText().toString());
+        current.setTitle(etTitle.getText().toString());
+        current.setDescription(etTitle.getText().toString());
+        System.out.println(current.getTitle());
         super.onDestroyView();
         unbinder.unbind();
     }
