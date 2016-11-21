@@ -1,5 +1,5 @@
 # SafeCity Android App
-Android version of [http://safecity.in/](SafeCity) on mobile.
+Android version of [SafeCity](http://safecity.in/ "SafeCity") on mobile.
 
 ## Goals
 This app serves as a mobile alternative to the SafeCity website for reporting instances of sexual assault.
