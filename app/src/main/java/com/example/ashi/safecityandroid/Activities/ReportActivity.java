@@ -11,9 +11,9 @@ import com.astuetz.PagerSlidingTabStrip;
 import com.example.ashi.safecityandroid.Models.Report;
 import com.example.ashi.safecityandroid.R;
 import com.example.ashi.safecityandroid.SmartFragmentStatePagerAdapter;
-import com.example.ashi.safecityandroid.StepOneFragment;
-import com.example.ashi.safecityandroid.StepThreeFragment;
-import com.example.ashi.safecityandroid.StepTwoFragment;
+import com.example.ashi.safecityandroid.Fragments.StepOneFragment;
+import com.example.ashi.safecityandroid.Fragments.StepThreeFragment;
+import com.example.ashi.safecityandroid.Fragments.StepTwoFragment;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
