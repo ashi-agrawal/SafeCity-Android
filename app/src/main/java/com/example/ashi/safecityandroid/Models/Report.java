@@ -32,6 +32,8 @@ public class Report implements Parcelable {
         //create array
     }
 
+    public Report() {};
+
     public String getDescription() {
         return incident_description;
     }

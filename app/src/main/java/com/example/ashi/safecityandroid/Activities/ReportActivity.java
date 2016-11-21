@@ -1,11 +1,15 @@
 package com.example.ashi.safecityandroid.Activities;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
+import android.widget.Button;
+import android.widget.Toast;
 
 import com.astuetz.PagerSlidingTabStrip;
 import com.example.ashi.safecityandroid.Models.Report;
@@ -26,6 +30,7 @@ public class ReportActivity extends AppCompatActivity{
     Report currentReport = new Report();
     StepsPagerAdapter adapterViewPager;
     @BindView(R.id.viewpager) ViewPager vpPager;
+    @BindView(R.id.btnsubmit) Button submit;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,6 +43,19 @@ public class ReportActivity extends AppCompatActivity{
         vpPager.setAdapter(adapterViewPager);
         PagerSlidingTabStrip tabStrip = (PagerSlidingTabStrip) findViewById(R.id.tabs);
         tabStrip.setViewPager(vpPager);
+
+        View.OnClickListener submitReportListener = new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (currentReport.checkIfComplete()) {
+                    //submit report and then clear the current report
+                } else {
+                    Toast.makeText(getApplicationContext(), "Sorry, make sure you fill out all fields before submitting!", Toast.LENGTH_LONG).show();
+                }
+            }
+        };
+
+        submit.setOnClickListener(submitReportListener);
     }
 
     public class StepsPagerAdapter extends SmartFragmentStatePagerAdapter {
