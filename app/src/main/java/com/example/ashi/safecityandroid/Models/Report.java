@@ -17,7 +17,8 @@ public class Report implements Parcelable {
     //private ______ time (what are we using?)
     private String incident_description = "";
     private int[] incident_category; //TODO: use an array of bools?
-    private boolean isComplete;
+    private boolean isComplete = false;
+    private boolean isEmpty = true;
 
     @Override
     public void writeToParcel(Parcel out, int flags) {
@@ -40,6 +41,7 @@ public class Report implements Parcelable {
 
     public void setDescription(String incident_description) {
         this.incident_description = incident_description;
+        isEmpty = false;
     }
 
     public String getTitle() {
@@ -48,6 +50,7 @@ public class Report implements Parcelable {
 
     public void setTitle(String incident_title) {
         this.incident_title = incident_title;
+        isEmpty = false;
     }
 
     public int[] getCategories() {
@@ -56,7 +59,10 @@ public class Report implements Parcelable {
 
     public void setCategories(int[] incident_category) {
         this.incident_category = incident_category;
+        isEmpty = false;
     }
+
+    public boolean checkIfEmpty(){ return isEmpty; }
 
     public boolean checkIfComplete() {
         if (isComplete) return isComplete;

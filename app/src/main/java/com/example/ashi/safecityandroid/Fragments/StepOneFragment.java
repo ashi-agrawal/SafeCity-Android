@@ -31,6 +31,7 @@ public class StepOneFragment extends Fragment {
     {
         super.onCreate(savedInstanceState);
         current = getArguments().getParcelable("report");
+        //TODO: if the current report has a location, autopopulate this fragment with a location
     }
 
     @Nullable

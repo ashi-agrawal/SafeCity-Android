@@ -39,6 +39,9 @@ public class StepTwoFragment extends Fragment {
     {
         super.onCreate(savedInstanceState);
         current = getArguments().getParcelable("report");
+        if (!current.checkIfEmpty()) {
+            //TODO: autopopulate info
+        }
     }
 
     @Nullable
