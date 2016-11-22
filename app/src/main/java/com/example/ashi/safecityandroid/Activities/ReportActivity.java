@@ -48,7 +48,8 @@ public class ReportActivity extends AppCompatActivity{
             @Override
             public void onClick(View v) {
                 if (currentReport.checkIfComplete()) {
-                    //submit report and then clear the current report
+                    //TODO: submit the report
+                    finish();
                 } else {
                     Toast.makeText(getApplicationContext(), "Sorry, make sure you fill out all fields before submitting!", Toast.LENGTH_LONG).show();
                 }
