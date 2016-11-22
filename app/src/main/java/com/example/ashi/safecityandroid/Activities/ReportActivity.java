@@ -14,6 +14,7 @@ import android.widget.Toast;
 import com.astuetz.PagerSlidingTabStrip;
 import com.example.ashi.safecityandroid.Models.Report;
 import com.example.ashi.safecityandroid.R;
+import com.example.ashi.safecityandroid.SafeCityClient;
 import com.example.ashi.safecityandroid.SmartFragmentStatePagerAdapter;
 import com.example.ashi.safecityandroid.Fragments.StepOneFragment;
 import com.example.ashi.safecityandroid.Fragments.StepThreeFragment;
@@ -29,6 +30,7 @@ import butterknife.ButterKnife;
 public class ReportActivity extends AppCompatActivity{
     Report currentReport = new Report();
     StepsPagerAdapter adapterViewPager;
+    SafeCityClient client = new SafeCityClient();
     @BindView(R.id.viewpager) ViewPager vpPager;
     @BindView(R.id.btnsubmit) Button submit;
 
@@ -43,12 +45,11 @@ public class ReportActivity extends AppCompatActivity{
         vpPager.setAdapter(adapterViewPager);
         PagerSlidingTabStrip tabStrip = (PagerSlidingTabStrip) findViewById(R.id.tabs);
         tabStrip.setViewPager(vpPager);
-
         View.OnClickListener submitReportListener = new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if (currentReport.checkIfComplete()) {
-                    //TODO: submit the report
+                    client.postReport(currentReport);
                     finish();
                 } else {
                     Toast.makeText(getApplicationContext(), "Sorry, make sure you fill out all fields before submitting!", Toast.LENGTH_LONG).show();

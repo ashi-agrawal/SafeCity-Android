@@ -13,11 +13,11 @@ import java.util.Calendar;
 public class Report implements Parcelable {
     private String incident_title = "";
     //private ___ location (use Google Maps API to find correct formatting)
-    //private Calendar date; this is hard to do because calendar sux but we will figure it out
+    private Calendar date;
+    //private ______ time (what are we using?)
     private String incident_description = "";
-    private int[] incident_category;
+    private int[] incident_category; //TODO: use an array of bools?
     private boolean isComplete;
-    //private ArrayList<Integer> categories;
 
     @Override
     public void writeToParcel(Parcel out, int flags) {
