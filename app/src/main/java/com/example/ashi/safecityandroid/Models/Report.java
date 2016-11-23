@@ -1,5 +1,6 @@
 package com.example.ashi.safecityandroid.Models;
 
+import android.location.Location;
 import android.os.Parcel;
 import android.os.Parcelable;
 
@@ -12,12 +13,17 @@ import java.util.Calendar;
 
 public class Report implements Parcelable {
     private String incident_title = "";
+    private Location incident_location;
     //private ___ location (use Google Maps API to find correct formatting)
     private Calendar date;
     //private ______ time (what are we using?)
     private String incident_description = "";
     private int[] incident_category; //TODO: use an array of bools?
     private boolean isComplete = false;
+    /* Variable: isEmpty
+      * -----------------
+     * isEmpty tracks if the report consists of any information (excluding location). This alerts the app to auto-populate information in the second swiping tab (if there was already information entered and the user swiped to another tab in between).
+     */
     private boolean isEmpty = true;
 
     @Override
@@ -37,6 +43,10 @@ public class Report implements Parcelable {
 
     public String getDescription() {
         return incident_description;
+    }
+
+    public void setLocation (Location locale) {
+        this.incident_location = locale;
     }
 
     public void setDescription(String incident_description) {
