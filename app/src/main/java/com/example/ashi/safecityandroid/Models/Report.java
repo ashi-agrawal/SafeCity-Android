@@ -14,9 +14,7 @@ import java.util.Calendar;
 public class Report implements Parcelable {
     private String incident_title = "";
     private Location incident_location;
-    //private ___ location (use Google Maps API to find correct formatting)
-    private Calendar date;
-    //private ______ time (what are we using?)
+    private Calendar incident_date;
     private String incident_description = "";
     private int[] incident_category; //TODO: use an array of bools?
     private boolean isComplete = false;
@@ -36,17 +34,25 @@ public class Report implements Parcelable {
     private Report(Parcel in) {
         incident_title = in.readString();
         incident_description = in.readString();
-        //create array
+        in.readIntArray(incident_category);
     }
 
     public Report() {};
 
-    public String getDescription() {
-        return incident_description;
-    }
+    public Location getLocation() { return incident_location; }
 
     public void setLocation (Location locale) {
         this.incident_location = locale;
+    }
+
+    public Calendar getTime() { return incident_date; }
+
+    public void setTime (Calendar date) {
+        this.incident_date = date;
+    }
+
+    public String getDescription() {
+        return incident_description;
     }
 
     public void setDescription(String incident_description) {

@@ -1,5 +1,6 @@
 package com.example.ashi.safecityandroid;
 
+import android.location.Location;
 import android.preference.PreferenceActivity;
 import android.util.Log;
 
@@ -9,6 +10,8 @@ import com.loopj.android.http.JsonHttpResponseHandler;
 import com.loopj.android.http.RequestParams;
 
 import org.json.JSONObject;
+
+import java.util.Calendar;
 
 import cz.msebera.android.httpclient.Header;
 
@@ -31,14 +34,16 @@ public class SafeCityClient {
         RequestParams params = new RequestParams();
         params.put("incident_title", report.getTitle());
         params.put("incident_description", report.getDescription());
+        Location incident_location = report.getLocation();
+        params.put("longitude", incident_location.getLongitude());
+        params.put("latitude", incident_location.getLatitude());
+        Calendar incident_time = report.getTime();
         handler = new JsonHttpResponseHandler();
 
         /*
         CATEGORIES: map location (coords & name), time/date, category
         OPTIONAL: name, email
-        longitude
         location_name
-        latitude
         incident_minute
         incident_hour
         incident_date
