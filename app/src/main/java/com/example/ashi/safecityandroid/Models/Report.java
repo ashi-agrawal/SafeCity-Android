@@ -11,13 +11,22 @@ import java.util.Calendar;
  * Created by ashi on 11/7/16.
  */
 
+/* Class: Report
+ * -------------------
+ * The Report class is a model to store and to pass information related to a particular report. At
+ * current, the class stores all variables relevant to interface with the API (exempting the
+ * optional variables /*TODO: include optional variables as well*/ /*as well as flags to aid in
+ * usage of the model.
+ */
 public class Report implements Parcelable {
     private String incident_title = "";
     private Location incident_location;
     private Calendar incident_date;
     private String incident_description = "";
-    private int[] incident_category; //TODO: use an array of bools?
+    private int[] incident_category;
     private boolean isComplete = false;
+    //TODO: when isComplete is false, the Submit button should be greyed out; it should regain color
+    //TODO: when isComplete becomes true
     /* Variable: isEmpty
       * -----------------
      * isEmpty tracks if the report consists of any information (excluding location). This alerts the app to auto-populate information in the second swiping tab (if there was already information entered and the user swiped to another tab in between).
@@ -29,12 +38,14 @@ public class Report implements Parcelable {
         out.writeString(incident_title);
         out.writeString(incident_description);
         out.writeIntArray(incident_category);
+        //TODO: finish with the other private variables
     }
 
     private Report(Parcel in) {
         incident_title = in.readString();
         incident_description = in.readString();
         in.readIntArray(incident_category);
+        //TODO: finish with the other private variables
     }
 
     public Report() {};
@@ -85,6 +96,7 @@ public class Report implements Parcelable {
         else {
             if (getTitle() != "" && getDescription () != "") isComplete = true;
             return isComplete;
+            //TODO: edit to include the rest of the private variables
         }
     }
 

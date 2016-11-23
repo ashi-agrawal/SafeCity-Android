@@ -57,6 +57,7 @@ public class StepTwoFragment extends Fragment {
         super.onPause();
         current.setTitle(etTitle.getText().toString());
         current.setDescription(etTitle.getText().toString());
+        //TODO: move these setter calls to when the title and description boxes are filled in so that a submission can occur when on the step2fragment
     }
 
     @Override

@@ -27,6 +27,12 @@ import butterknife.ButterKnife;
  * Created by ashi on 10/21/16.
  */
 
+/* Class: ReportActivity
+ * -------------------
+ * This activity allows a user to create and submit a report to the SafeCity backend. The Report
+ * activity is styled using the StateFragmentStatePagerAdapter which allows users to swipe in
+ * between fragments.
+ */
 public class ReportActivity extends AppCompatActivity{
     Report currentReport = new Report();
     StepsPagerAdapter adapterViewPager;
@@ -45,6 +51,8 @@ public class ReportActivity extends AppCompatActivity{
         vpPager.setAdapter(adapterViewPager);
         PagerSlidingTabStrip tabStrip = (PagerSlidingTabStrip) findViewById(R.id.tabs);
         tabStrip.setViewPager(vpPager);
+
+        //This block is used to link the Submit button to either submit the report or show an error.
         View.OnClickListener submitReportListener = new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -52,11 +60,10 @@ public class ReportActivity extends AppCompatActivity{
                     client.postReport(currentReport);
                     finish();
                 } else {
-                    Toast.makeText(getApplicationContext(), "Sorry, make sure you fill out all fields before submitting!", Toast.LENGTH_LONG).show();
+                    Toast.makeText(getApplicationContext(), R.string.incomplete_report_toast, Toast.LENGTH_LONG).show();
                 }
             }
         };
-
         submit.setOnClickListener(submitReportListener);
     }
 

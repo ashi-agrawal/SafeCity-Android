@@ -25,6 +25,7 @@ public class StepOneFragment extends Fragment {
         return frag;
     }
 
+    //TODO: embed a MapFragment here
 
     @Override
     public void onCreate(Bundle savedInstanceState)
