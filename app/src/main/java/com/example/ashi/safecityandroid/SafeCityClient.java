@@ -40,8 +40,8 @@ public class SafeCityClient {
         params.put("latitude", incident_location.getLatitude());
         Calendar incident_time = report.getTime();
         //TODO: params.put("incident_minute", _____________);
-        //TODO: params.put("incident_hour", _____________);
-        //TODO: params.put("incident_date", _____________);
+        params.put("incident_hour", incident_time.HOUR);
+        params.put("incident_date", report.getDate());
         //TODO: params.put("incident_category", _____________);
         //TODO: params.put("incident_ampm", _____________);
         /*TODO:

@@ -60,6 +60,17 @@ public class Report implements Parcelable {
 
     public Calendar getTime() { return incident_date; }
 
+    public String getDate() {
+        int month = incident_date.MONTH;
+        String string_month = Integer.toString(month);
+        if (month < 10) string_month = "0" + string_month;
+        int date = incident_date.DATE;
+        String string_day = Integer.toString(date);
+        if (date < 10) string_day = "0" + string_day;
+        String year = Integer.toString(incident_date.YEAR);
+        return string_month + "/" + string_day + "/" + year;
+    }
+
     public void setTime (Calendar date) {
         this.incident_date = date;
     }
