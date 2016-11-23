@@ -31,6 +31,7 @@ public class StepThreeFragment extends Fragment {
         super.onCreate(savedInstanceState);
         Report current = getArguments().getParcelable("report");
         //TODO: autopopulate this fragment with information to confirm
+        //TODO: include an optional EditText for name & email
     }
 
     @Nullable

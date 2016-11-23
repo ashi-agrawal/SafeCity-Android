@@ -24,6 +24,8 @@ public class Report implements Parcelable {
     private Calendar incident_date;
     private String incident_description = "";
     private int[] incident_category;
+    private String name = "";
+    private String email = "";
     private boolean isComplete = false;
     //TODO: when isComplete is false, the Submit button should be greyed out; it should regain color
     //TODO: when isComplete becomes true
