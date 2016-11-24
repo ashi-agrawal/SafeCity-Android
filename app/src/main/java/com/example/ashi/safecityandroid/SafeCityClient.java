@@ -39,17 +39,20 @@ public class SafeCityClient {
         params.put("longitude", incident_location.getLongitude());
         params.put("latitude", incident_location.getLatitude());
         Calendar incident_time = report.getTime();
-        //TODO: params.put("incident_minute", _____________);
+        params.put("incident_minute", incident_time.MINUTE);
         params.put("incident_hour", incident_time.HOUR);
         params.put("incident_date", report.getDate());
-        //TODO: params.put("incident_category", _____________);
-        //TODO: params.put("incident_ampm", _____________);
-        /*TODO:
-        if (the name or the email is not empty...)
-        params.put("person_first", ___________);
-        params.put("person_last", _________);
-        params.put("person_email", __________);
-        */
+        params.put("incident_category", report.getCategories());
+        params.put("incident_ampm", report.getAMPM());
+        if (report.getName() != "") {
+            String fullName = report.getName();
+            String[] firstLast = fullName.split(" ");
+            params.put("person_first", firstLast[0]);
+            params.put("person_last", firstLast[1]);
+        }
+        if (report.getEmail() != "") {
+            params.put("person_email", report.getEmail());
+        }
 
         client.post(PUBLIC_BASE_URL + post, params, handler);
     }
