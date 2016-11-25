@@ -8,7 +8,7 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.example.ashi.safecityandroid.Report2">
+    tools:context="com.example.ashi.safecityandroid.Fragments.StepTwoFragment">
 
     <TextView
         android:text="Step 2"
@@ -16,7 +16,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:id="@+id/textView4"
+        android:id="@+id/tvStep2"
         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
         android:textColor="@android:color/holo_purple" />
 
@@ -24,7 +24,7 @@
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@+id/textView4"
+        android:layout_below="@+id/tvStep2"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="14dp">
 
@@ -32,7 +32,7 @@
             android:text="Please fill out the following information."
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/textView7"
+            android:id="@+id/tvInstructions"
             android:textAppearance="@style/TextAppearance.AppCompat.Body1"
             android:textSize="18sp" />
 
@@ -45,7 +45,7 @@
                 android:text="Report Title:"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/textView8"
+                android:id="@+id/tvTitleBlock"
                 android:textAppearance="@style/TextAppearance.AppCompat.Body1"
                 android:textSize="18sp"
                 android:layout_weight="0.19" />
@@ -54,7 +54,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:ems="10"
-                android:id="@+id/title"
+                android:id="@+id/etTitle"
                 android:layout_weight="0.51"
                 android:inputType="text" />
         </LinearLayout>
@@ -63,7 +63,7 @@
             android:text="Description:"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/textView11"
+            android:id="@+id/tvDescriptionBlock"
             android:textAppearance="@style/TextAppearance.AppCompat.Body1"
             android:textSize="18sp" />
 
@@ -72,7 +72,7 @@
             android:layout_height="wrap_content"
             android:inputType="textMultiLine"
             android:ems="10"
-            android:id="@+id/editText3"
+            android:id="@+id/etDescription"
             android:minLines="3" />
 
         <LinearLayout
@@ -84,7 +84,7 @@
                 android:text="Date/Time:"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/textView12"
+                android:id="@+id/tvDateTimeBlock"
                 android:layout_weight="1"
                 android:textAppearance="@style/TextAppearance.AppCompat.Body1"
                 android:textSize="18sp" />
@@ -93,7 +93,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:ems="10"
-                android:id="@+id/dateTime"
+                android:id="@+id/etDateTime"
                 android:layout_weight="1"
                 android:inputType="text" />
         </LinearLayout>
@@ -102,7 +102,7 @@
             android:text="Categories:"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/textView13"
+            android:id="@+id/tvCategories"
             android:textAppearance="@style/TextAppearance.AppCompat.Body1"
             android:textSize="18sp" />
 
@@ -209,17 +209,6 @@
 
             </LinearLayout>
         </LinearLayout>
-
-        <Button
-            android:text="Next"
-            android:layout_width="match_parent"
-            android:layout_height="75dp"
-            android:layout_alignParentBottom="true"
-            android:id="@+id/toStep3"
-            android:backgroundTint="@android:color/holo_purple"
-            android:textColor="@android:color/white"
-            android:textStyle="normal|bold"
-            android:textSize="24sp" />
 
     </LinearLayout>
 </RelativeLayout>

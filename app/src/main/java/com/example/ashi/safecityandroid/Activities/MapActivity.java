@@ -14,5 +14,6 @@ public class MapActivity extends AppCompatActivity {
         ActionBar actionBar = getSupportActionBar();
         actionBar.hide();
         setContentView(R.layout.activity_map_main);
+        //TODO: embed a MapFragment here
     }
 }

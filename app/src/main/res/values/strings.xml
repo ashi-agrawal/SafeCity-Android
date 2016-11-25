@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">SafeCity Android</string>
+    <string name="incomplete_report_toast">Sorry, make sure you fill out all fields before submitting!</string>
 </resources>
