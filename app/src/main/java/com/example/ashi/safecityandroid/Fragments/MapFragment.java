@@ -51,7 +51,7 @@ public class MapFragment extends SupportMapFragment implements OnMapReadyCallbac
         map.setOnMapLoadedCallback(new GoogleMap.OnMapLoadedCallback() {
             @Override
             public void onMapLoaded() {
-                //TODO: impelemnt intelligent zoom; use the location of different pins to do this
+                //TODO: implement intelligent zoom; use the location of different pins to do this
                 //TODO: use markers as pins for the areas with maximal reports
             }
         });
