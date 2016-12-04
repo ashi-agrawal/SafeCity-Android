@@ -19,7 +19,7 @@ import java.util.Calendar;
  */
 public class Report implements Parcelable {
     private String incident_title = "";
-    private Location incident_location;
+    private Location incident_location; //TODO: change to Place (Caroline, 12/3)
     private Calendar incident_date;
     private String incident_description = "";
     private int[] incident_category;
