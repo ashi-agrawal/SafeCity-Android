@@ -9,6 +9,7 @@ import com.loopj.android.http.AsyncHttpClient;
 import com.loopj.android.http.JsonHttpResponseHandler;
 import com.loopj.android.http.RequestParams;
 
+import org.json.JSONArray;
 import org.json.JSONObject;
 
 import java.util.Calendar;
@@ -22,7 +23,16 @@ import cz.msebera.android.httpclient.Header;
 public class SafeCityClient {
     public static final String PUBLIC_BASE_URL = "http://maps.safecity.in/api?task=";
     AsyncHttpClient client = new AsyncHttpClient();
-    JsonHttpResponseHandler handler = new JsonHttpResponseHandler();
+    JsonHttpResponseHandler handler = new JsonHttpResponseHandler(){
+        @Override
+        public void onSuccess(int statusCode, Header[] headers, JSONArray response) {
+        }
+
+        @Override
+        public void onFailure(int statusCode, Header[] headers, Throwable throwable, JSONObject errorResponse) {
+            Log.d("help", errorResponse.toString());
+        }
+    });;
 
     public void getReport() {
         String get = "incidents";
