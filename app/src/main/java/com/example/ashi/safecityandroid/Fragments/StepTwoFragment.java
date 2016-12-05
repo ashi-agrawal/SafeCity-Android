@@ -7,9 +7,12 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.example.ashi.safecityandroid.Models.Report;
 import com.example.ashi.safecityandroid.R;
+
+import java.util.Calendar;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -22,6 +25,12 @@ import butterknife.Unbinder;
 public class StepTwoFragment extends Fragment {
     @BindView(R.id.etTitle) EditText etTitle;
     @BindView(R.id.etDescription) EditText etDescription;
+    @BindView(R.id.etAM) EditText etAM;
+    @BindView(R.id.etDay) EditText etDay;
+    @BindView(R.id.etMonth) EditText etMonth;
+    @BindView(R.id.etYear) EditText etYear;
+    @BindView(R.id.etHour) EditText etHour;
+    @BindView(R.id.etMinute) EditText etMinute;
     Report current;
     private Unbinder unbinder;
 
@@ -39,9 +48,6 @@ public class StepTwoFragment extends Fragment {
     {
         super.onCreate(savedInstanceState);
         current = getArguments().getParcelable("report");
-        if (!current.checkIfEmpty()) {
-            //TODO: autopopulate info
-        }
     }
 
     @Nullable
@@ -57,6 +63,24 @@ public class StepTwoFragment extends Fragment {
         super.onPause();
         current.setTitle(etTitle.getText().toString());
         current.setDescription(etDescription.getText().toString());
+        Calendar time = Calendar.getInstance();
+        String year = etYear.getText().toString();
+        String month = etMonth.getText().toString();
+        String date = etDay.getText().toString();
+        String hour = etHour.getText().toString();
+        String minutes = etMinute.getText().toString();
+        String AM = etAM.getText().toString();
+        if (year != null && month != null & date != null && hour != null && minutes != null && AM != null) {
+            int hour_of_day = Integer.parseInt(hour);
+            if (AM.toLowerCase().equals("pm")) hour_of_day += 12;
+            time.set(Integer.parseInt(year), Integer.parseInt(month), Integer.parseInt(date), hour_of_day, Integer.parseInt(minutes));
+        } else {
+            if (year != null || month != null || date != null || hour != null || minutes != null || AM != null){
+                Toast.makeText(getContext(), "Make sure to fill out all fields of the date and time!", Toast.LENGTH_SHORT).show();
+            }
+        }
+        current.setTime(time);
+        //current.setCategories();
         //TODO: move these setter calls to when the title and description boxes are filled in so that a submission can occur when on the step2fragment
     }
 
