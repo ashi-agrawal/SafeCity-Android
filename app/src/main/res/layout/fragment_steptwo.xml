@@ -26,7 +26,8 @@
         android:layout_height="match_parent"
         android:layout_below="@+id/tvStep2"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="8dp">
+        android:layout_marginTop="8dp"
+        android:weightSum="1">
 
         <TextView
             android:text="Please fill out the following information."
@@ -73,7 +74,8 @@
             android:inputType="textMultiLine"
             android:ems="10"
             android:id="@+id/etDescription"
-            android:minLines="3" />
+            android:minLines="3"
+            android:layout_weight="0.20" />
 
         <LinearLayout
             android:orientation="horizontal"
