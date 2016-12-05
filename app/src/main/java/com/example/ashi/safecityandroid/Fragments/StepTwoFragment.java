@@ -1,8 +1,10 @@
 package com.example.ashi.safecityandroid.Fragments;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -48,6 +50,7 @@ public class StepTwoFragment extends Fragment {
     @BindView(R.id.other) CheckBox cbOther;
     Report current;
     private Unbinder unbinder;
+    private OnFragmentInteractionListener mListener;
 
     public static StepTwoFragment newInstance (Report currentReport){
         StepTwoFragment frag = new StepTwoFragment();
@@ -76,6 +79,7 @@ public class StepTwoFragment extends Fragment {
     @Override
     public void onPause() {
         super.onPause();
+        Log.d("Step2Fragment", "onPause test");
         current.setTitle(etTitle.getText().toString());
         current.setDescription(etDescription.getText().toString());
         Calendar time = Calendar.getInstance();
@@ -88,7 +92,8 @@ public class StepTwoFragment extends Fragment {
         if (!year.equals("") && !month.equals("") && !date.equals("") && !hour.equals("") && !minutes.equals("") && !AM.equals("")) {
             int hour_of_day = Integer.parseInt(hour);
             if (AM.toLowerCase().equals("pm")) hour_of_day += 12;
-            time.set(Integer.parseInt(year), Integer.parseInt(month), Integer.parseInt(date), hour_of_day, Integer.parseInt(minutes));
+            time.set(Integer.parseInt(year), Integer.parseInt(month) - 1, Integer.parseInt(date), hour_of_day, Integer.parseInt(minutes));
+            Log.d("StepTwoFragment", time.get(Calendar.YEAR) + " " + time.get(Calendar.MONTH) + " " + time.get(Calendar.DATE) + " " + time.get(Calendar.HOUR) + " " + time.get(Calendar.MINUTE));
         } else {
             if (year.equals("") || month.equals("") || date.equals("") || hour.equals("") || minutes.equals("") || AM.equals("")){
                 Toast.makeText(getContext(), "Make sure to fill out all fields of the date and time!", Toast.LENGTH_SHORT).show();
@@ -112,11 +117,32 @@ public class StepTwoFragment extends Fragment {
         categories.replace(" ", ",");
         categories = categories.substring(0, categories.length() - 1);
         current.setCategories(categories);
+        mListener.onFragmentInteraction(current);
+        Log.d("StepTwoFragment", current.getDescription());
     }
 
     @Override
     public void onDestroyView() {
         super.onDestroyView();
         unbinder.unbind();
+    }
+
+    public void onAttach(Context context) {
+        super.onAttach(context);
+        if (context instanceof OnFragmentInteractionListener) {
+            mListener = (OnFragmentInteractionListener) context;
+        } else {
+            throw new RuntimeException(context.toString()
+                    + " must implement OnFragmentInteractionListener");
+        }
+    }
+
+    public void onDetach() {
+        super.onDetach();
+        mListener = null;
+    }
+
+    public interface OnFragmentInteractionListener {
+        void onFragmentInteraction(Report report);
     }
 }

@@ -20,9 +20,9 @@ import java.util.Calendar;
 public class Report implements Parcelable {
     private String incident_title = "";
     private Location incident_location;
-    private Calendar incident_date;
+    private Calendar incident_date = Calendar.getInstance();
     private String incident_description = "";
-    private String incident_category;
+    private String incident_category = "";
     private String name = "";
     private String email = "";
     private boolean isComplete = false;

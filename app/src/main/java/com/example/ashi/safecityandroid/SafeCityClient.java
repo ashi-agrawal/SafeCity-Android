@@ -23,16 +23,6 @@ import cz.msebera.android.httpclient.Header;
 public class SafeCityClient {
     public static final String PUBLIC_BASE_URL = "http://maps.safecity.in/api?task=";
     AsyncHttpClient client = new AsyncHttpClient();
-    JsonHttpResponseHandler handler = new JsonHttpResponseHandler(){
-        @Override
-        public void onSuccess(int statusCode, Header[] headers, JSONArray response) {
-        }
-
-        @Override
-        public void onFailure(int statusCode, Header[] headers, Throwable throwable, JSONObject errorResponse) {
-            Log.d("help", errorResponse.toString());
-        }
-    };
 
     public void getReport() {
         String get = "incidents";
@@ -57,6 +47,7 @@ public class SafeCityClient {
         params.put("incident_date", report.getDate());
         params.put("incident_category", report.getCategories());
         params.put("incident_ampm", report.getAMPM());
+        params.put("task", "report");
         if (report.getName() != "") {
             String fullName = report.getName();
             String[] firstLast = fullName.split(" ");
@@ -66,8 +57,18 @@ public class SafeCityClient {
         if (report.getEmail() != "") {
             params.put("person_email", report.getEmail());
         }
+        Log.d("what", "is going onnnnn");
+        client.post(PUBLIC_BASE_URL + post, params, new JsonHttpResponseHandler(){
+            @Override
+            public void onSuccess(int statusCode, Header[] headers, JSONObject response) {
+                Log.d("success", response.toString());
+            }
 
-        client.post(PUBLIC_BASE_URL + post, params, handler);
+            @Override
+            public void onFailure(int statusCode, Header[] headers, Throwable throwable, JSONObject errorResponse) {
+                Log.d("help", errorResponse.toString());
+            }
+        });
     }
 
 }

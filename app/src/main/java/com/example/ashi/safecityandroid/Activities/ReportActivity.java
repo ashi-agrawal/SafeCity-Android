@@ -7,6 +7,7 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
@@ -33,10 +34,11 @@ import butterknife.ButterKnife;
  * activity is styled using the StateFragmentStatePagerAdapter which allows users to swipe in
  * between fragments.
  */
-public class ReportActivity extends AppCompatActivity{
+public class ReportActivity extends AppCompatActivity implements StepTwoFragment.OnFragmentInteractionListener {
     Report currentReport = new Report();
     StepsPagerAdapter adapterViewPager;
     SafeCityClient client = new SafeCityClient();
+    StepTwoFragment currStepTwo = StepTwoFragment.newInstance(currentReport);
     @BindView(R.id.viewpager) ViewPager vpPager;
     @BindView(R.id.btnsubmit) Button submit;
 
@@ -56,8 +58,11 @@ public class ReportActivity extends AppCompatActivity{
         View.OnClickListener submitReportListener = new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                currStepTwo.onPause();
+                Log.d("what", "is happening");
                 if (currentReport.checkIfComplete()) {
                     client.postReport(currentReport);
+                    Log.d("it's finished!", "wohoo");
                     finish();
                 } else {
                     Toast.makeText(getApplicationContext(), R.string.incomplete_report_toast, Toast.LENGTH_LONG).show();
@@ -65,6 +70,11 @@ public class ReportActivity extends AppCompatActivity{
             }
         };
         submit.setOnClickListener(submitReportListener);
+    }
+
+    public void onFragmentInteraction(Report report) {
+        this.currentReport = report;
+        Log.d("ReportActivity", this.currentReport.getDescription());
     }
 
     public class StepsPagerAdapter extends SmartFragmentStatePagerAdapter {
@@ -80,7 +90,7 @@ public class ReportActivity extends AppCompatActivity{
                 case (0):
                     return StepOneFragment.newInstance(currentReport);
                 case (1):
-                    return StepTwoFragment.newInstance(currentReport);
+                    return currStepTwo;
                 case (2):
                     return StepThreeFragment.newInstance(currentReport);
                 default:
