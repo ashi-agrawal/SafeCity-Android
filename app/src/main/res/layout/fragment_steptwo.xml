@@ -70,7 +70,7 @@
 
         <EditText
             android:layout_width="match_parent"
-            android:layout_height="25dp"
+            android:layout_height="30dp"
             android:inputType="textMultiLine"
             android:ems="10"
             android:id="@+id/etDescription"
