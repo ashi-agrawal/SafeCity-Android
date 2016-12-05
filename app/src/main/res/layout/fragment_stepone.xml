@@ -32,13 +32,13 @@
         android:layout_below="@+id/editText"
         android:layout_centerHorizontal="true" />-->
 
-    <fragment
-        android:id="@+id/place_autocomplete_fragment"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:name="com.google.android.gms.location.places.ui.SupportPlaceAutocompleteFragment"
-        tools:layout="@layout/place_autocomplete_fragment" />
+    <!--<fragment-->
+        <!--android:id="@+id/place_autocomplete_fragment"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_alignParentBottom="true"-->
+        <!--android:name="com.google.android.gms.location.places.ui.SupportPlaceAutocompleteFragment"-->
+        <!--tools:layout="@layout/place_autocomplete_fragment" />-->
 
     <TextView
         android:layout_width="match_parent"
@@ -51,8 +51,9 @@
         android:id="@+id/editText3"
         android:textAppearance="@style/TextAppearance.AppCompat.Body1"
         android:textSize="18sp"
-        android:layout_above="@+id/place_autocomplete_fragment"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
+        <!--android:layout_above="@+id/place_autocomplete_fragment"-->
+
 
 </RelativeLayout>
