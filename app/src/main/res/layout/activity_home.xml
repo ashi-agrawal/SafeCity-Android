@@ -9,31 +9,23 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.example.ashi.safecityandroid.Activities.HomeActivity"
-    android:backgroundTint="@android:color/holo_red_light">
-
-    <ImageView
-        android:layout_width="700dp"
-        android:layout_height="100dp"
-        android:layout_marginTop="100dp"
-        android:layout_alignParentTop="true"
-        android:id="@+id/ivLogo"
-        android:scaleX="2.0"
-        android:scaleY="2.0"
-        android:src="@drawable/icon_logo"/>
+    android:backgroundTint="@color/common_google_signin_btn_text_dark_default"
+    android:background="@android:color/white">
 
     <Button
         android:text="Report"
-        android:layout_width="match_parent"
         android:id="@+id/report"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="70dp"
         android:backgroundTint="@android:color/holo_red_light"
         android:textColor="@android:color/white"
         android:textStyle="bold"
         android:layout_height="75dp"
+        android:textSize="24sp"
+        android:fontFamily="sans-serif-smallcaps"
+        style="@style/Widget.AppCompat.Button"
+        android:layout_width="match_parent"
         android:layout_below="@+id/ivLogo"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:textSize="24sp" />
+        android:layout_centerHorizontal="true" />
 
     <Button
         android:text="Map"
@@ -43,8 +35,23 @@
         android:backgroundTint="@android:color/holo_purple"
         android:textColor="@android:color/white"
         android:textStyle="normal|bold"
+        android:textSize="24sp"
+        android:fontFamily="sans-serif-smallcaps"
         android:layout_below="@+id/report"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:textSize="24sp" />
+        android:layout_marginTop="16dp" />
+
+    <ImageView
+        android:layout_width="700dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="66dp"
+        android:id="@+id/ivLogo"
+        android:scaleX="2.0"
+        android:scaleY="2.0"
+        android:src="@drawable/icon_logo"
+        android:background="@android:color/background_light"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 </RelativeLayout>
