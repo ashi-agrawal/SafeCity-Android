@@ -34,10 +34,13 @@ public class SafeCityClient {
         RequestParams params = new RequestParams();
         params.put("incident_title", report.getTitle());
         params.put("incident_description", report.getDescription());
-        Location incident_location = report.getLocation();
+        //Location incident_location = report.getLocation();
         //TODO: params.put("location_name", ___________);
-        params.put("longitude", incident_location.getLongitude());
-        params.put("latitude", incident_location.getLatitude());
+        //params.put("longitude", incident_location.getLongitude());
+        //params.put("latitude", incident_location.getLatitude());
+        params.put("location_name", "Stanford");
+        params.put("longitude", 90);
+        params.put("latitude", 90);
         Calendar incident_time = report.getTime();
         params.put("incident_minute", incident_time.MINUTE);
         params.put("incident_hour", incident_time.HOUR);

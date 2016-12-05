@@ -6,6 +6,7 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.Toast;
 
@@ -31,6 +32,20 @@ public class StepTwoFragment extends Fragment {
     @BindView(R.id.etYear) EditText etYear;
     @BindView(R.id.etHour) EditText etHour;
     @BindView(R.id.etMinute) EditText etMinute;
+    @BindView(R.id.catcalls) CheckBox cbCatcalls;
+    @BindView(R.id.ogling) CheckBox cbOgling;
+    @BindView(R.id.takingPics) CheckBox cbTakingPics;
+    @BindView(R.id.indecent) CheckBox cbIndecent;
+    @BindView(R.id.lighting) CheckBox cbLighting;
+    @BindView(R.id.chain) CheckBox cbChain;
+    @BindView(R.id.LGBT) CheckBox cbLGBT;
+    @BindView(R.id.commenting) CheckBox cbCommenting;
+    @BindView(R.id.stalking) CheckBox cbStalking;
+    @BindView(R.id.touching) CheckBox cbTouching;
+    @BindView(R.id.invites) CheckBox cbInvites;
+    @BindView(R.id.rape) CheckBox cbRape;
+    @BindView(R.id.ethnicity) CheckBox cbEthnicity;
+    @BindView(R.id.other) CheckBox cbOther;
     Report current;
     private Unbinder unbinder;
 
@@ -80,8 +95,23 @@ public class StepTwoFragment extends Fragment {
             }
         }
         current.setTime(time);
-        //current.setCategories();
-        //TODO: move these setter calls to when the title and description boxes are filled in so that a submission can occur when on the step2fragment
+        String categories = " ";
+        if (cbCatcalls.isChecked()) categories = "1 " + categories;
+        if (cbCommenting.isChecked()) categories = "2 " + categories;
+        if (cbOgling.isChecked()) categories = "6 " + categories;
+        if (cbStalking.isChecked()) categories = "20 " + categories;
+        if (cbTakingPics.isChecked()) categories = "3 " + categories;
+        if (cbTouching.isChecked()) categories = "8 " + categories;
+        if (cbIndecent.isChecked()) categories = "9 " + categories;
+        if (cbInvites.isChecked()) categories = "10 " + categories;
+        if (cbRape.isChecked()) categories = "11 " + categories;
+        if (cbLighting.isChecked()) categories = "18 " + categories;
+        if (cbChain.isChecked()) categories = "17 " + categories;
+        if (cbEthnicity.isChecked()) categories = "19 " + categories;
+        if (cbOther.isChecked()) categories = "15 " + categories;
+        categories.replace(" ", ",");
+        categories = categories.substring(0, categories.length() - 1);
+        current.setCategories(categories);
     }
 
     @Override
