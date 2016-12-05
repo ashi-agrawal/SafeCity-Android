@@ -138,6 +138,7 @@ public class Report implements Parcelable {
         if (isComplete) return isComplete;
         else {
             if (!getTitle().equals("") && !getDescription().equals("") && !getDate().equals("") && !getCategories().equals("") /*&& getLocation() != null*/) isComplete = true;
+            System.out.println(getTitle() + getDescription() + getDate() + getCategories());
             return isComplete;
         }
     }
