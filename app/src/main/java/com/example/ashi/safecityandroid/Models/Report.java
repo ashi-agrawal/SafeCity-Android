@@ -137,7 +137,7 @@ public class Report implements Parcelable {
     public boolean checkIfComplete() {
         if (isComplete) return isComplete;
         else {
-            if (getTitle() != "" && getDescription () != "" && getDate() != "" && getCategories() != "" && /*getLocation() != null*/) isComplete = true;
+            if (getTitle() != "" && getDescription () != "" && getDate() != "" && getCategories() != "" /*&& getLocation() != null*/) isComplete = true;
             return isComplete;
         }
     }

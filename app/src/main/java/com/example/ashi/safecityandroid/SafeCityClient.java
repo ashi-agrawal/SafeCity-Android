@@ -38,6 +38,7 @@ public class SafeCityClient {
         //TODO: params.put("location_name", ___________);
         //params.put("longitude", incident_location.getLongitude());
         //params.put("latitude", incident_location.getLatitude());
+        params.put("location_name", "Stanford");
         params.put("longitude", 90);
         params.put("latitude", 90);
         Calendar incident_time = report.getTime();
