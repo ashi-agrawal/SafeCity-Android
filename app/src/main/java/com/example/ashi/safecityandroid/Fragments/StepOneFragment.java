@@ -12,7 +12,6 @@ import android.view.ViewGroup;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.common.api.Status;
-import com.google.android.gms.location.LocationServices;
 import com.google.android.gms.location.places.Place;
 import com.google.android.gms.location.places.ui.PlaceAutocompleteFragment;
 import com.google.android.gms.location.places.ui.PlaceSelectionListener;
@@ -51,7 +50,8 @@ public class StepOneFragment extends Fragment {
         //        getFragmentManager().findFragmentById(R.id.place_autocomplete_fragment);
 
 
-        SupportPlaceAutocompleteFragment autocompleteFragment  = (SupportPlaceAutocompleteFragment)getActivity().getSupportFragmentManager().findFragmentById(R.id.place_autocomplete_fragment);
+        SupportPlaceAutocompleteFragment autocompleteFragment  = (SupportPlaceAutocompleteFragment)
+                getActivity().getSupportFragmentManager().findFragmentById(R.id.place_autocomplete_fragment);
 
         autocompleteFragment.setOnPlaceSelectedListener(new PlaceSelectionListener() {
             @Override
