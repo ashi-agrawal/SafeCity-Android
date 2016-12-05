@@ -22,7 +22,7 @@ public class Report implements Parcelable {
     private Location incident_location;
     private Calendar incident_date;
     private String incident_description = "";
-    private int[] incident_category;
+    private String incident_category;
     private String name = "";
     private String email = "";
     private boolean isComplete = false;
@@ -38,7 +38,7 @@ public class Report implements Parcelable {
     public void writeToParcel(Parcel out, int flags) {
         out.writeString(incident_title);
         out.writeString(incident_description);
-        out.writeIntArray(incident_category);
+        out.writeString(incident_category);
         out.writeValue(incident_date);
         out.writeValue(incident_location);
         out.writeString(name);
@@ -48,7 +48,7 @@ public class Report implements Parcelable {
     private Report(Parcel in) {
         incident_title = in.readString();
         incident_description = in.readString();
-        in.readIntArray(incident_category);
+        incident_category = in.readString();
         incident_date = in.readParcelable(incident_date.getClass().getClassLoader());
         incident_location = in.readParcelable(incident_location.getClass().getClassLoader());
         name = in.readString();
@@ -108,10 +108,10 @@ public class Report implements Parcelable {
     }
 
     public String getCategories() {
-        return incident_category.toString().replace("[", "").replace("]", "").replace(" ", "");
+        return incident_category;
     }
 
-    public void setCategories(int[] incident_category) {
+    public void setCategories(String incident_category) {
         this.incident_category = incident_category;
         isEmpty = false;
     }
@@ -137,7 +137,7 @@ public class Report implements Parcelable {
     public boolean checkIfComplete() {
         if (isComplete) return isComplete;
         else {
-            if (getTitle() != "" && getDescription () != "" && getDate() != "" && getCategories() != "" && getLocation() != null) isComplete = true;
+            if (getTitle() != "" && getDescription () != "" && getDate() != "" && getCategories() != "" && /*getLocation() != null*/) isComplete = true;
             return isComplete;
         }
     }
