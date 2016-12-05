@@ -26,7 +26,7 @@
         android:layout_height="match_parent"
         android:layout_below="@+id/tvStep2"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="14dp">
+        android:layout_marginTop="8dp">
 
         <TextView
             android:text="Please fill out the following information."
@@ -55,7 +55,7 @@
                 android:layout_height="wrap_content"
                 android:ems="10"
                 android:id="@+id/etTitle"
-                android:layout_weight="0.51"
+                android:layout_weight="0.61"
                 android:inputType="text" />
         </LinearLayout>
 
@@ -69,7 +69,7 @@
 
         <EditText
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="25dp"
             android:inputType="textMultiLine"
             android:ems="10"
             android:id="@+id/etDescription"
@@ -119,43 +119,43 @@
                 <CheckBox
                     android:text="Catcalls/Whistles"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="21dp"
                     android:id="@+id/catcalls" />
 
                 <CheckBox
                     android:text="Ogling/Facial Expressions"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="21dp"
                     android:id="@+id/ogling" />
 
                 <CheckBox
                     android:text="Taking Pictures"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="21dp"
                     android:id="@+id/takingPics" />
 
                 <CheckBox
                     android:text="Indecent Exposure"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="21dp"
                     android:id="@+id/indecent" />
 
                 <CheckBox
                     android:text="Poor/No Street Lighting"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="21dp"
                     android:id="@+id/lighting" />
 
                 <CheckBox
                     android:text="Chain Snatching"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="21dp"
                     android:id="@+id/chain" />
 
                 <CheckBox
                     android:text="LGBT Issue"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="21dp"
                     android:id="@+id/LGBT" />
 
             </LinearLayout>
@@ -168,43 +168,43 @@
                 <CheckBox
                     android:text="Commenting"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="21dp"
                     android:id="@+id/commenting" />
 
                 <CheckBox
                     android:text="Stalking"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="21dp"
                     android:id="@+id/stalking" />
 
                 <CheckBox
                     android:text="Touching/Groping"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="21dp"
                     android:id="@+id/touching" />
 
                 <CheckBox
                     android:text="Sexual Invites"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="21dp"
                     android:id="@+id/invites" />
 
                 <CheckBox
                     android:text="Rape/Sexual Assault"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="21dp"
                     android:id="@+id/rape" />
 
                 <CheckBox
                     android:text="Ethnicity"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="21dp"
                     android:id="@+id/ethnicity" />
 
                 <CheckBox
                     android:text="Other"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="21dp"
                     android:id="@+id/other" />
 
             </LinearLayout>
