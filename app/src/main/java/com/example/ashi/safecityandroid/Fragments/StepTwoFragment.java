@@ -85,12 +85,12 @@ public class StepTwoFragment extends Fragment {
         String hour = etHour.getText().toString();
         String minutes = etMinute.getText().toString();
         String AM = etAM.getText().toString();
-        if (year != "" && month != "" & date != "" && hour != "" && minutes != "" && AM != "") {
+        if (!year.equals("") && !month.equals("") && !date.equals("") && !hour.equals("") && !minutes.equals("") && !AM.equals("")) {
             int hour_of_day = Integer.parseInt(hour);
             if (AM.toLowerCase().equals("pm")) hour_of_day += 12;
             time.set(Integer.parseInt(year), Integer.parseInt(month), Integer.parseInt(date), hour_of_day, Integer.parseInt(minutes));
         } else {
-            if (year != "" || month != "" || date != "" || hour != "" || minutes != "" || AM != ""){
+            if (year.equals("") || month.equals("") || date.equals("") || hour.equals("") || minutes.equals("") || AM.equals("")){
                 Toast.makeText(getContext(), "Make sure to fill out all fields of the date and time!", Toast.LENGTH_SHORT).show();
             }
         }
