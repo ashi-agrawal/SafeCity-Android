@@ -3,6 +3,7 @@ package com.example.ashi.safecityandroid.Fragments;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentTransaction;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -18,6 +19,7 @@ import com.google.android.gms.location.places.ui.PlaceSelectionListener;
 
 import com.example.ashi.safecityandroid.Models.Report;
 import com.example.ashi.safecityandroid.R;
+import com.google.android.gms.location.places.ui.SupportPlaceAutocompleteFragment;
 
 /**
  * Created by ashi on 11/7/16.
@@ -45,8 +47,11 @@ public class StepOneFragment extends Fragment {
         current = getArguments().getParcelable("report");
         //TODO: if the current report has a location, autopopulate this fragment with a location
 
-        PlaceAutocompleteFragment autocompleteFragment = (PlaceAutocompleteFragment)
-                getFragmentManager().findFragmentById(R.id.place_autocomplete_fragment);
+        //PlaceAutocompleteFragment autocompleteFragment = (PlaceAutocompleteFragment)
+        //        getFragmentManager().findFragmentById(R.id.place_autocomplete_fragment);
+
+
+        SupportPlaceAutocompleteFragment autocompleteFragment  = (SupportPlaceAutocompleteFragment)getActivity().getSupportFragmentManager().findFragmentById(R.id.place_autocomplete_fragment);
 
         autocompleteFragment.setOnPlaceSelectedListener(new PlaceSelectionListener() {
             @Override
