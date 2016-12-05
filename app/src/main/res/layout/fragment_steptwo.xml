@@ -34,7 +34,7 @@
             android:layout_height="wrap_content"
             android:id="@+id/tvInstructions"
             android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-            android:textSize="18sp" />
+            android:textSize="16sp" />
 
         <LinearLayout
             android:orientation="horizontal"
@@ -47,7 +47,7 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/tvTitleBlock"
                 android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-                android:textSize="18sp"
+                android:textSize="16sp"
                 android:layout_weight="0.19" />
 
             <EditText
@@ -65,7 +65,7 @@
             android:layout_height="wrap_content"
             android:id="@+id/tvDescriptionBlock"
             android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-            android:textSize="18sp" />
+            android:textSize="16sp" />
 
         <EditText
             android:layout_width="match_parent"
@@ -81,21 +81,96 @@
             android:layout_height="wrap_content">
 
             <TextView
-                android:text="Date/Time:"
+                android:text="Date:"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/tvDateTimeBlock"
+                android:id="@+id/tvDateBlock"
                 android:layout_weight="1"
                 android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-                android:textSize="18sp" />
+                android:textSize="16sp" />
 
             <EditText
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:ems="10"
-                android:id="@+id/etDateTime"
+                android:ems="2"
+                android:id="@+id/etMonth"
                 android:layout_weight="1"
-                android:inputType="text" />
+                android:inputType="text"
+                android:textSize="14sp"
+                android:textAlignment="center"
+                android:hint="mm"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="/" />
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ems="1"
+                android:id="@+id/etDay"
+                android:layout_weight="1"
+                android:inputType="text"
+                android:textSize="14sp"
+                android:textAlignment="center"
+                android:hint="dd"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="/" />
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ems="2"
+                android:id="@+id/etYear"
+                android:layout_weight="1"
+                android:inputType="text"
+                android:textSize="14sp"
+                android:textAlignment="center"
+                android:hint="yyyy"/>
+
+            <TextView
+                android:text="Time:"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/tvTimeBlock"
+                android:layout_weight="1"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                android:textSize="16sp" />
+
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ems="1"
+                android:id="@+id/etHour"
+                android:layout_weight="1"
+                android:inputType="text"
+                android:textSize="14sp"
+                android:textAlignment="center"
+                android:hint="00"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=":"/>
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ems="1"
+                android:id="@+id/etMinute"
+                android:layout_weight="1"
+                android:inputType="text"
+                android:textSize="14sp"
+                android:textAlignment="center"
+                android:hint="00"/>
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ems="1"
+                android:id="@+id/etAM"
+                android:layout_weight="1"
+                android:inputType="text"
+                android:textSize="14sp"
+                android:textAlignment="center"
+                android:hint="AM"/>
         </LinearLayout>
 
         <TextView
@@ -104,7 +179,8 @@
             android:layout_height="wrap_content"
             android:id="@+id/tvCategories"
             android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-            android:textSize="18sp" />
+            android:layout_marginBottom="5dp"
+            android:textSize="16sp" />
 
         <LinearLayout
             android:orientation="horizontal"
