@@ -9,6 +9,7 @@ import com.loopj.android.http.AsyncHttpClient;
 import com.loopj.android.http.JsonHttpResponseHandler;
 import com.loopj.android.http.RequestParams;
 
+import org.json.JSONArray;
 import org.json.JSONObject;
 
 import java.util.Calendar;
@@ -22,7 +23,16 @@ import cz.msebera.android.httpclient.Header;
 public class SafeCityClient {
     public static final String PUBLIC_BASE_URL = "http://maps.safecity.in/api?task=";
     AsyncHttpClient client = new AsyncHttpClient();
-    JsonHttpResponseHandler handler = new JsonHttpResponseHandler();
+    JsonHttpResponseHandler handler = new JsonHttpResponseHandler(){
+        @Override
+        public void onSuccess(int statusCode, Header[] headers, JSONArray response) {
+        }
+
+        @Override
+        public void onFailure(int statusCode, Header[] headers, Throwable throwable, JSONObject errorResponse) {
+            Log.d("help", errorResponse.toString());
+        }
+    };
 
     public void getReport() {
         String get = "incidents";
@@ -34,10 +44,13 @@ public class SafeCityClient {
         RequestParams params = new RequestParams();
         params.put("incident_title", report.getTitle());
         params.put("incident_description", report.getDescription());
-        Location incident_location = report.getLocation();
+        //Location incident_location = report.getLocation();
         //TODO: params.put("location_name", ___________);
-        params.put("longitude", incident_location.getLongitude());
-        params.put("latitude", incident_location.getLatitude());
+        //params.put("longitude", incident_location.getLongitude());
+        //params.put("latitude", incident_location.getLatitude());
+        params.put("location_name", "Stanford");
+        params.put("longitude", 90);
+        params.put("latitude", 90);
         Calendar incident_time = report.getTime();
         params.put("incident_minute", incident_time.MINUTE);
         params.put("incident_hour", incident_time.HOUR);
