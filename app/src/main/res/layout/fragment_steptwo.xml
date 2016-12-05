@@ -10,27 +10,30 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.example.ashi.safecityandroid.Fragments.StepTwoFragment">
 
-    <TextView
-        android:text="Step 2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:id="@+id/tvStep2"
-        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
-        android:textColor="@android:color/holo_purple" />
+        android:layout_centerHorizontal="true">
 
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_below="@+id/tvStep2"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="8dp"
+        android:layout_height="wrap_content"
         android:weightSum="1">
 
         <TextView
+            android:text="Step 2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:id="@+id/tvStep2"
+            android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+            android:textColor="@android:color/holo_purple" />
+
+        <TextView
             android:text="Please fill out the following information."
+            android:layout_marginTop="8dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/tvInstructions"
@@ -61,7 +64,7 @@
         </LinearLayout>
 
         <TextView
-            android:text="Description:"
+            android:text="Description of Incident:"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/tvDescriptionBlock"
@@ -176,7 +179,7 @@
         </LinearLayout>
 
         <TextView
-            android:text="Categories:"
+            android:text="Categories of Harassement:"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/tvCategories"
@@ -289,4 +292,6 @@
         </LinearLayout>
 
     </LinearLayout>
+
+    </ScrollView>
 </RelativeLayout>
