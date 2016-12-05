@@ -15,5 +15,7 @@ public class MapActivity extends AppCompatActivity {
         actionBar.hide();
         setContentView(R.layout.activity_map_main);
         //TODO: embed a MapFragment here
+        //Tara, 11-26: Have embedded a static MapFragment by adding a fragment to activity_map_main.xml.
+        //Will embed MapFragment dynamically once the static version is working.
     }
 }
