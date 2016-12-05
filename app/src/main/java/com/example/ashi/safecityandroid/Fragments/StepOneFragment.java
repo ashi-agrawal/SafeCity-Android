@@ -53,7 +53,11 @@ public class StepOneFragment extends Fragment {
         SupportPlaceAutocompleteFragment autocompleteFragment  = (SupportPlaceAutocompleteFragment)
                 getActivity().getSupportFragmentManager().findFragmentById(R.id.place_autocomplete_fragment);
 
-        autocompleteFragment.setOnPlaceSelectedListener(new PlaceSelectionListener() {
+        Log.d("StepOneFragment", getActivity().toString());
+        if (autocompleteFragment == null)
+            Log.d("StepOneFragment", "It's null :(");
+
+        /*autocompleteFragment.setOnPlaceSelectedListener(new PlaceSelectionListener() {
             @Override
             public void onPlaceSelected(Place place) {
                 // TODO: Get info about the selected place.
@@ -65,7 +69,7 @@ public class StepOneFragment extends Fragment {
                 // TODO: Handle the error.
                 Log.i(TAG, "An error occurred: " + status);
             }
-        });
+        });*/
     }
 
     @Nullable
