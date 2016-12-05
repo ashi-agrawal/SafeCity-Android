@@ -32,7 +32,7 @@ public class SafeCityClient {
         public void onFailure(int statusCode, Header[] headers, Throwable throwable, JSONObject errorResponse) {
             Log.d("help", errorResponse.toString());
         }
-    });;
+    };
 
     public void getReport() {
         String get = "incidents";
