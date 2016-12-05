@@ -56,5 +56,4 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:name="com.google.android.gms.location.places.ui.PlaceAutocompleteFragment" />
-
 </RelativeLayout>
