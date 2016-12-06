@@ -69,6 +69,7 @@ public class StepOneFragment extends Fragment {
         autocompleteFragment.setOnPlaceSelectedListener(new PlaceSelectionListener() {
             @Override
             public void onPlaceSelected(Place place) {
+                current.setLocation(place);
                 // TODO: Get info about the selected place.
                 Log.i(TAG, "Place: " + place.getName());
             }

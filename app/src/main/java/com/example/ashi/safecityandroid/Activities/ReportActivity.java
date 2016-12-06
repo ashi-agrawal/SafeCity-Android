@@ -38,6 +38,7 @@ public class ReportActivity extends AppCompatActivity implements StepTwoFragment
     Report currentReport = new Report();
     StepsPagerAdapter adapterViewPager;
     SafeCityClient client = new SafeCityClient();
+    StepOneFragment currStepOne = StepOneFragment.newInstance(currentReport);
     StepTwoFragment currStepTwo = StepTwoFragment.newInstance(currentReport);
     @BindView(R.id.viewpager) ViewPager vpPager;
     @BindView(R.id.btnsubmit) Button submit;
@@ -74,7 +75,6 @@ public class ReportActivity extends AppCompatActivity implements StepTwoFragment
 
     public void onFragmentInteraction(Report report) {
         this.currentReport = report;
-        Log.d("ReportActivity", this.currentReport.getDescription());
     }
 
     public class StepsPagerAdapter extends SmartFragmentStatePagerAdapter {
@@ -88,7 +88,7 @@ public class ReportActivity extends AppCompatActivity implements StepTwoFragment
         public Fragment getItem(int position) {
             switch(position) {
                 case (0):
-                    return StepOneFragment.newInstance(currentReport);
+                    return currStepOne;
                 case (1):
                     return currStepTwo;
                 case (2):

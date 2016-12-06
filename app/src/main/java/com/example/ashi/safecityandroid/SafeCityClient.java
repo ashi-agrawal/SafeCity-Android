@@ -1,10 +1,10 @@
 package com.example.ashi.safecityandroid;
 
-import android.location.Location;
 import android.preference.PreferenceActivity;
 import android.util.Log;
 
 import com.example.ashi.safecityandroid.Models.Report;
+import com.google.android.gms.location.places.Place;
 import com.loopj.android.http.AsyncHttpClient;
 import com.loopj.android.http.JsonHttpResponseHandler;
 import com.loopj.android.http.RequestParams;
@@ -34,13 +34,10 @@ public class SafeCityClient {
         RequestParams params = new RequestParams();
         params.put("incident_title", report.getTitle());
         params.put("incident_description", report.getDescription());
-        //Location incident_location = report.getLocation();
-        //TODO: params.put("location_name", ___________);
-        //params.put("longitude", incident_location.getLongitude());
-        //params.put("latitude", incident_location.getLatitude());
-        params.put("location_name", "Stanford");
-        params.put("longitude", 90);
-        params.put("latitude", 90);
+        Place incident_location = report.getLocation();
+        params.put("location_name", incident_location.getName());
+        params.put("longitude", incident_location.getLatLng().longitude);
+        params.put("latitude", incident_location.getLatLng().latitude);
         Calendar incident_time = report.getTime();
         params.put("incident_minute", incident_time.MINUTE);
         params.put("incident_hour", incident_time.HOUR);

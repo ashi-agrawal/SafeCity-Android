@@ -1,10 +1,10 @@
 package com.example.ashi.safecityandroid.Models;
 
-import android.location.Location;
 import android.os.Parcel;
 import android.os.Parcelable;
 
-import java.util.ArrayList;
+import com.google.android.gms.location.places.Place;
+
 import java.util.Calendar;
 
 /**
@@ -19,7 +19,7 @@ import java.util.Calendar;
  */
 public class Report implements Parcelable {
     private String incident_title = "";
-    private Location incident_location;
+    private Place incident_location;
     private Calendar incident_date = Calendar.getInstance();
     private String incident_description = "";
     private String incident_category = "";
@@ -57,9 +57,9 @@ public class Report implements Parcelable {
 
     public Report() {};
 
-    public Location getLocation() { return incident_location; }
+    public Place getLocation() { return incident_location; }
 
-    public void setLocation (Location locale) {
+    public void setLocation (Place locale) {
         this.incident_location = locale;
     }
 
@@ -137,7 +137,7 @@ public class Report implements Parcelable {
     public boolean checkIfComplete() {
         if (isComplete) return isComplete;
         else {
-            if (!getTitle().equals("") && !getDescription().equals("") && !getDate().equals("") && !getCategories().equals("") /*&& getLocation() != null*/) isComplete = true;
+            if (!getTitle().equals("") && !getDescription().equals("") && !getDate().equals("") && !getCategories().equals("") && getLocation() != null) isComplete = true;
             System.out.println(getTitle() + getDescription() + getDate() + getCategories());
             return isComplete;
         }
