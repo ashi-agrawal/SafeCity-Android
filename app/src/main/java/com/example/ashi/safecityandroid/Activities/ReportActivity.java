@@ -60,10 +60,9 @@ public class ReportActivity extends AppCompatActivity implements StepTwoFragment
             @Override
             public void onClick(View v) {
                 currStepTwo.onPause();
-                Log.d("what", "is happening");
                 if (currentReport.checkIfComplete()) {
                     client.postReport(currentReport);
-                    Log.d("it's finished!", "wohoo");
+                    Toast.makeText(getApplicationContext(), "Thank you for submitting a report!", Toast.LENGTH_LONG).show();
                     finish();
                 } else {
                     Toast.makeText(getApplicationContext(), R.string.incomplete_report_toast, Toast.LENGTH_LONG).show();
