@@ -50,14 +50,23 @@ public class StepOneFragment extends Fragment {
         //        getFragmentManager().findFragmentById(R.id.place_autocomplete_fragment);
 
 
+
+    }
+
+    @Nullable
+    @Override
+    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup parent, @Nullable Bundle savedInstanceState) {
+        View v = inflater.inflate(R.layout.fragment_stepone, parent, false);
+        return v;
+    }
+
+    @Override
+    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
         SupportPlaceAutocompleteFragment autocompleteFragment  = (SupportPlaceAutocompleteFragment)
-                getActivity().getSupportFragmentManager().findFragmentById(R.id.place_autocomplete_fragment);
+                getChildFragmentManager().findFragmentById(R.id.place_autocomplete_fragment);
 
-        Log.d("StepOneFragment", getActivity().toString());
-        if (autocompleteFragment == null)
-            Log.d("StepOneFragment", "It's null :(");
-
-        /*autocompleteFragment.setOnPlaceSelectedListener(new PlaceSelectionListener() {
+        autocompleteFragment.setOnPlaceSelectedListener(new PlaceSelectionListener() {
             @Override
             public void onPlaceSelected(Place place) {
                 // TODO: Get info about the selected place.
@@ -66,17 +75,8 @@ public class StepOneFragment extends Fragment {
 
             @Override
             public void onError(Status status) {
-                // TODO: Handle the error.
-                Log.i(TAG, "An error occurred: " + status);
             }
-        });*/
-    }
-
-    @Nullable
-    @Override
-    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup parent, @Nullable Bundle savedInstanceState) {
-        View v = inflater.inflate(R.layout.fragment_stepone, parent, false);
-        return v;
+        });
     }
 
     @Override
