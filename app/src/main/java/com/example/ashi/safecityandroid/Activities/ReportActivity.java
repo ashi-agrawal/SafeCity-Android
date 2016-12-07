@@ -77,7 +77,8 @@ public class ReportActivity extends AppCompatActivity implements StepTwoFragment
     }
 
     public class StepsPagerAdapter extends SmartFragmentStatePagerAdapter {
-        private String tabTitles[] = {"Step One", "Step Two", "Step Three"};
+        private String tabTitles[] = {"Step One", "Step Two"};
+        //private String tabTitles[] = {"Step One", "Step Two", "Step Three"};
 
         public StepsPagerAdapter(FragmentManager fm){
             super(fm);
@@ -90,8 +91,8 @@ public class ReportActivity extends AppCompatActivity implements StepTwoFragment
                     return currStepOne;
                 case (1):
                     return currStepTwo;
-                case (2):
-                    return StepThreeFragment.newInstance(currentReport);
+                //case (2):
+                    //return StepThreeFragment.newInstance(currentReport);
                 default:
                     return null;
             }
