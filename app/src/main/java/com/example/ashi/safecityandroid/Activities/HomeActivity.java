@@ -23,7 +23,7 @@ import butterknife.ButterKnife;
 public class HomeActivity extends AppCompatActivity {
 
     @BindView(R.id.report) Button report;
-    @BindView(R.id.map) Button map;
+    //@BindView(R.id.map) Button map;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,6 +44,7 @@ public class HomeActivity extends AppCompatActivity {
         report.setOnClickListener(toReportListener);
 
         //This block is used to link the Map button to launching the map flow.
+        /*
         View.OnClickListener toMapListener = new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -52,5 +53,6 @@ public class HomeActivity extends AppCompatActivity {
             }
         };
         map.setOnClickListener(toMapListener);
+        */
     }
 }

@@ -5,6 +5,7 @@
       <module fileurl="file://$PROJECT_DIR$/SafeCity-Android.iml" filepath="$PROJECT_DIR$/SafeCity-Android.iml" />
       <module fileurl="file://$PROJECT_DIR$/SafeCityAndroid.iml" filepath="$PROJECT_DIR$/SafeCityAndroid.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/safecity.iml" filepath="$PROJECT_DIR$/safecity.iml" />
     </modules>
   </component>
 </project>
