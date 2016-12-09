@@ -12,6 +12,19 @@
     android:backgroundTint="@color/common_google_signin_btn_text_dark_default"
     android:background="@android:color/white">
 
+    <ImageView
+        android:layout_width="700dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="66dp"
+        android:id="@+id/ivLogo"
+        android:scaleX="2.0"
+        android:scaleY="2.0"
+        android:src="@drawable/icon_logo"
+        android:background="@android:color/background_light"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
     <Button
         android:text="Report"
         android:id="@+id/report"
@@ -26,6 +39,7 @@
         android:layout_width="match_parent"
         android:layout_below="@+id/ivLogo"
         android:layout_centerHorizontal="true" />
+    </RelativeLayout>
 
     <!--<Button-->
         <!--android:text="Map"-->
@@ -41,17 +55,3 @@
         <!--android:layout_alignParentLeft="true"-->
         <!--android:layout_alignParentStart="true"-->
         <!--android:layout_marginTop="16dp" />-->
-
-    <ImageView
-        android:layout_width="700dp"
-        android:layout_height="100dp"
-        android:layout_marginTop="66dp"
-        android:id="@+id/ivLogo"
-        android:scaleX="2.0"
-        android:scaleY="2.0"
-        android:src="@drawable/icon_logo"
-        android:background="@android:color/background_light"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
-</RelativeLayout>
